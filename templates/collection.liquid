@@ -1,0 +1,8 @@
+{% paginate collection.products by 12 %}
+  <div class="collection-grid">
+    {% for product in collection.products %}
+      {% include 'product-card' %}
+    {% endfor %}
+  </div>
+  {{ paginate | default_pagination }}
+{% endpaginate %}
