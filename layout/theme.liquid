@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{{ page_title }} | Everest</title>
+  {{ content_for_header }}
+  {{ 'theme.css.liquid' | asset_url | stylesheet_tag }}
+</head>
+<body>
+  {% section 'header' %}
+  <main>
+    {{ content_for_layout }}
+  </main>
+  {% section 'footer' %}
+  {{ 'theme.js.liquid' | asset_url | script_tag }}
+</body>
+</html>
