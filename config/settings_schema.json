@@ -1,0 +1,18 @@
+[
+  {
+    "name": "Theme Settings",
+    "settings": [
+      {
+        "type": "image_picker",
+        "id": "logo",
+        "label": "Logo Everest"
+      },
+      {
+        "type": "color",
+        "id": "primary_color",
+        "label": "Cor Primária",
+        "default": "#FF9900"
+      }
+    ]
+  }
+]
