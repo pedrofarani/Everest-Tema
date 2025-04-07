@@ -1,6 +1,30 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
+<!-- Schema Markup (Product) -->
+{% if template.name == 'product' %}
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Product",
+      "name": {{ product.title | json }},
+      "description": {{ product.description | strip_html | json }},
+      "brand": { "@type": "Brand", "name": "Everest" },
+      "offers": {
+        "@type": "Offer",
+        "price": {{ product.price | money_without_currency | json }},
+        "priceCurrency": "BRL"
+      }
+    }
+  </script>
+{% endif %}
+
+<!-- Meta Tags Dinâmicas -->
+<title>{{ page_title }} | Everest</title>
+<meta name="description" content="{{ page_description | default: 'Compre os melhores produtos na Everest.' }}" />
+<meta property="og:title" content="{{ page_title }}" />
+<meta property="og:description" content="{{ page_description }}" />
+<meta property="og:image" content="{{ product.featured_image | img_url: '800x' }}" />
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>{{ page_title }} | Everest</title>
