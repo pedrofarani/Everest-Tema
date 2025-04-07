@@ -1,0 +1,32 @@
+<div class="product-page">
+  <div class="product-images">
+    {% for image in product.images %}
+      <img src="{{ image.src | img_url: '800x' }}" alt="{{ product.title }}">
+    {% endfor %}
+  </div>
+  <div class="product-info">
+    <h1>{{ product.title }}</h1>
+    <div class="price">{{ product.price | money }}</div>
+    <div class="stock-counter"></div>
+    <form action="/cart/add" method="post">
+      <button type="submit" class="buy-now">COMPRAR AGORA</button>
+    </form>
+    <div class="description">
+      {{ product.description }}
+    </div>
+  </div>
+</div>
+
+<style>
+  .product-page {
+    display: flex;
+    gap: 30px;
+  }
+  .buy-now {
+    background: #FF9900;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+  }
+</style>
