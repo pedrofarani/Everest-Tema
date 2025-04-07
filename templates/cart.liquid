@@ -1,0 +1,29 @@
+<div class="everest-checkout">
+  <h1>Finalizar Compra</h1>
+  <form action="/checkout" method="post">
+    <div class="cart-items">
+      {% for item in cart.items %}
+        <div class="item">
+          <img src="{{ item.image | img_url: '100x' }}" alt="{{ item.title }}">
+          <h3>{{ item.title }}</h3>
+          <p>{{ item.price | money }}</p>
+        </div>
+      {% endfor %}
+    </div>
+    <button type="submit" class="checkout-button">Pagar Agora</button>
+  </form>
+</div>
+
+<style>
+  .everest-checkout {
+    max-width: 800px;
+    margin: 0 auto;
+  }
+  .checkout-button {
+    background: #FF9900;
+    color: white;
+    padding: 15px 30px;
+    border: none;
+    width: 100%;
+  }
+</style>
