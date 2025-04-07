@@ -1,0 +1,22 @@
+<div class="product-card">
+  <a href="{{ product.url }}">
+    <img src="{{ product.featured_image | img_url: '300x' }}" alt="{{ product.title }}">
+    <h3>{{ product.title }}</h3>
+    <p>{{ product.price | money }}</p>
+    <span class="badge">Frete Grátis</span>
+  </a>
+</div>
+
+<style>
+  .product-card {
+    border: 1px solid #ddd;
+    padding: 15px;
+    text-align: center;
+  }
+  .badge {
+    background: #FF9900;
+    color: white;
+    padding: 3px 8px;
+    font-size: 12px;
+  }
+</style>
