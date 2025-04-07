@@ -1,0 +1,10 @@
+{% section 'product-template' %}
+{% section 'related-products' %}
+
+<script>
+  // Dynamic stock counter (fake scarcity)
+  document.addEventListener('DOMContentLoaded', () => {
+    const stockCount = Math.floor(Math.random() * 10) + 1;
+    document.querySelector('.stock-counter').textContent = `Só ${stockCount} restantes!`;
+  });
+</script>
