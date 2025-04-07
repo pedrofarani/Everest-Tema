@@ -1,0 +1,10 @@
+<div class="dsers-import">
+  <button id="sync-products" class="button">Atualizar Produtos via DSers</button>
+</div>
+
+<script>
+  document.getElementById('sync-products').addEventListener('click', () => {
+    fetch('/apps/dsers/sync-products', { method: 'POST' })
+      .then(response => alert('Produtos atualizados!'));
+  });
+</script>
